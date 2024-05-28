@@ -54,7 +54,14 @@ public class GrapheListe implements Graphe {
      * @return l affichage du contenu d un objet GrapheListe
      */
     public String toString() {
-        String affichage = "test";
+        String affichage = "";
+        final int[] i = {0};
+        noeuds.forEach(noeud->
+        {
+            System.out.print("noeud -> ");
+            adjacence.get(i[0]).getArcs().forEach(arc -> System.out.print(arc));
+            i[0]++;
+        });
         return affichage;
     }
 
