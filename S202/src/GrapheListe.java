@@ -75,6 +75,13 @@ public class GrapheListe implements Graphe {
      */
     public String toString() {
         String affichage = "";
+        final int[] i = {0};
+        noeuds.forEach(noeud->
+        {
+            System.out.print("noeud -> ");
+            adjacence.get(i[0]).getArcs().forEach(arc -> System.out.print(arc));
+            i[0]++;
+        });
         return affichage;
     }
 

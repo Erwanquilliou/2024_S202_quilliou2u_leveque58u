@@ -15,6 +15,9 @@ public class Arc {
             this.cout = 1;
     }
 
+    public String toString(){
+        return dest + "(" + cout + ")";
+    }
 
 
 }
