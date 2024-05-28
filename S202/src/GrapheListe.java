@@ -52,7 +52,7 @@ public class GrapheListe implements Graphe {
      * @return l affichage du contenu d un objet GrapheListe
      */
     public String toString() {
-        String affichage = "";
+        String affichage = "test";
         return affichage;
     }
 
