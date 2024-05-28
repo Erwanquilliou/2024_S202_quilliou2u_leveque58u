@@ -44,7 +44,9 @@ public class GrapheListe implements Graphe {
      * @param cout cout de l arc
      */
     public void ajouterArc(String depart, String destination, double cout) {
-        
+        a;
+        a;
+        a;
     }
 
     /**
