@@ -1,5 +1,8 @@
 public class Arc {
-    public Arc(String dest){
-        this
+    String dest;
+    double cout;
+    public Arc(String d,double c){
+        this.dest = d;
+        this.cout = c;
     }
 }
