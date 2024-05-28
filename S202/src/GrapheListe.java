@@ -9,7 +9,7 @@ public class GrapheListe implements Graphe {
     private ArrayList<Arcs> adjacence;
 
     /**
-     * methode getIndice
+     * methode getIndice qui renvoie l indice du noeud passe en parametre
      * @param n noeud
      * @return indice du noeud passe en parametre
      */
@@ -37,6 +37,23 @@ public class GrapheListe implements Graphe {
         return this.adjacence.get(indice).getArcs();
     }
 
+    /**
+     * methode ajouterArc qui permet d ajouter des noeuds et des arcs a un objet de type GrapheListe
+     * @param depart noeud de depart
+     * @param destination noeud de destination
+     * @param cout cout de l arc
+     */
+    public void ajouterArc(String depart, String destination, double cout) {
+        
+    }
 
+    /**
+     * methode toString
+     * @return l affichage du contenu d un objet GrapheListe
+     */
+    public String toString() {
+        String affichage = "";
+        return affichage;
+    }
 
 }
