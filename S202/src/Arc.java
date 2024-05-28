@@ -3,7 +3,7 @@ public class Arc {
     private double cout;
 
     /**
-     *
+     *Constructeur, crée un arc avec une destination et un cout
      * @param d String représentant la destination de l'arc
      * @param c Réel positif représentant le cout de l'arc
      */
