@@ -1,3 +1,4 @@
+
 public class Main {
 
     public static void main(String[] args) {
@@ -10,6 +11,8 @@ public class Main {
         g.ajouterArc("B", "E", 11);
         g.ajouterArc("E", "D", 43);
         BellemanFord b =new BellemanFord();
-        System.out.println(b.resoudre(g,"A"));
+        Valeur v = b.resoudre(g,"A");
+        System.out.println(v);
+        System.out.println(v.calculerChemin("C"));
     }
 }
