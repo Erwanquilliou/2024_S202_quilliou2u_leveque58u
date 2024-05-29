@@ -9,8 +9,9 @@ public class BellemanFord {
             v.setValeur(l.get(i),Double.MAX_VALUE);
         }
         v.setValeur(depart,0);
-        AtomicBoolean pointFixe = new AtomicBoolean(true);
-        while (pointFixe.get()){
+        AtomicBoolean pointFixe = new AtomicBoolean(false);
+        while (!pointFixe.get()){
+            int[] changement = {0};
             for(int i = 0;i<l.size();i++){
                 String noeudC = l.get(i);
                 for(int[]  j = {0};j[0]<l.size();j[0]++){
@@ -19,11 +20,15 @@ public class BellemanFord {
                         if(noeud.getDest() == noeudC){
                             if(noeud.getCout()+v.getValeur(l.get(j[0])) < v.getValeur(noeudC)){
                                 v.setValeur(noeudC,noeud.getCout()+v.getValeur(l.get(j[0])));
-                                pointFixe.set(false);
+                                v.setParent(noeudC,l.get(j[0]));
+                                changement[0]++;
                             }
                         }
                     });
                 }
+            }
+            if (changement[0]==0){
+                pointFixe.set(true);
             }
         }
         return v;

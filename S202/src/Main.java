@@ -9,6 +9,7 @@ public class Main {
         g.ajouterArc("D", "B", 23);
         g.ajouterArc("B", "E", 11);
         g.ajouterArc("E", "D", 43);
-        
+        BellemanFord b =new BellemanFord();
+        System.out.println(b.resoudre(g,"A"));
     }
 }
