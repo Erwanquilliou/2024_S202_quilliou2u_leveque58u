@@ -8,6 +8,12 @@ public class GrapheListe implements Graphe {
     //a liste des Arcs partant de chaque noeud du graphe
     private ArrayList<Arcs> adjacence;
 
+
+    public GrapheListe(){
+        this.noeuds = new ArrayList<String>();
+        this.adjacence = new ArrayList<Arcs>();
+    }
+
     /**
      * methode getIndice qui renvoie l indice du noeud passe en parametre
      * @param n noeud
@@ -78,9 +84,10 @@ public class GrapheListe implements Graphe {
         final int[] i = {0};
         noeuds.forEach(noeud->
         {
-            System.out.print("noeud -> ");
+            System.out.print(noeud+" -> ");
             adjacence.get(i[0]).getArcs().forEach(arc -> System.out.print(arc));
             i[0]++;
+            System.out.println("");
         });
         return affichage;
     }
