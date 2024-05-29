@@ -47,12 +47,16 @@ public class Dijkstra {
 
             //on regarde les suivants du sommetMin
             List<Arc> suivantsMin = g.suivants(sommetMin);
+            List<String> suivantsMinNom;
+            for(int j=0; j<listeNoeuds.size(); j++){
+                if(v.getValeur(listeNoeuds.get(j) == ))
+            }
             //pour chaque suivant du sommetMin
             double distance = 0;
             for (int k=0; k<suivantsMin.size(); k++) {
                 // on calcule le cout du chemin avec le sommetMin et on le compare au chemin sauvegardé dans Valeur
-                distance = v.getValeur(sommetMin) + g.;
-                if ()
+                distance = v.getValeur(sommetMin) + suivantsMin.get(k).getCout();
+                if (distance < v.getValeur(suivantsMin.get(k)));
             }
 
         }
