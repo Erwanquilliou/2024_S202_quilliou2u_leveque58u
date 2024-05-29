@@ -52,16 +52,36 @@ class GrapheListeTest {
         g.ajouterArc("A", "D", 87);
         g.ajouterArc("C", "A", 19);
 
-        assertEquals("B",g.suivants("A").)
+        assertEquals("[B(12.0), D(87.0)]",g.suivants("A").toString());
     }
-/*
+
+    @Test
+    void suivantsInexistant() {
+        GrapheListe g = new GrapheListe();
+        g.ajouterArc("A", "B", 12);
+        g.ajouterArc("A", "D", 87);
+        g.ajouterArc("C", "A", 19);
+
+        assertEquals("[]",g.suivants("H").toString());
+    }
+
+    @Test
+    void ajouterArcNoeudsInexistants() {
+        GrapheListe g = new GrapheListe();
+        g.ajouterArc("A", "B", 12);
+
+        assertEquals("A",g.listeNoeuds().get(0));
+        assertEquals("B",g.listeNoeuds().get(1));
+    }
+
     @Test
     void ajouterArc() {
+        GrapheListe g = new GrapheListe();
+        g.ajouterArc("A", "B", 12);
+        g.ajouterArc("A", "D", 87);
+
+        assertEquals("[B(12.0), D(87.0)]",g.suivants("A").toString());
+        assertEquals("D",g.listeNoeuds().get(2));
     }
 
-    @Test
-    void testToString() {
-    }
-
- */
 }

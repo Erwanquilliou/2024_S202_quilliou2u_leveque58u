@@ -40,7 +40,11 @@ public class GrapheListe implements Graphe {
     @Override
     public List<Arc> suivants(String n) {
         int indice = this.getIndice(n);
-        return this.adjacence.get(indice).getArcs();
+        if (indice == -1) {
+            return new ArrayList<Arc>();
+        } else {
+            return this.adjacence.get(indice).getArcs();
+        }
     }
 
     /**
