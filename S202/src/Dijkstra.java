@@ -29,11 +29,33 @@ public class Dijkstra {
     public void resoudre(GrapheListe g, String depart) {
         Valeur v = new Valeur();
         List<String> listeNoeuds = g.listeNoeuds();
-        for (int sommet=0; sommet<listeNoeuds.size(); sommet++) {
-            v.setValeur(listeNoeuds.get(sommet),Double.MAX_VALUE);
+        for (int i=0; i<listeNoeuds.size(); i++) {
+            v.setValeur(listeNoeuds.get(i),Double.MAX_VALUE);
         }
         v.setValeur(depart,0);
 
+        while (listeNoeuds.size() > 0) {
+            double min = v.getValeur(listeNoeuds.get(0));
+            String sommetMin = listeNoeuds.get(0);
+            for (int j=0; j<listeNoeuds.size(); j++) {
+                if (v.getValeur(listeNoeuds.get(j))< min) {
+                    min = v.getValeur(listeNoeuds.get(j));
+                    sommetMin = listeNoeuds.get(j);
+                }
+            }
+            listeNoeuds.remove(sommetMin);
+
+            //on regarde les suivants du sommetMin
+            List<Arc> suivantsMin = g.suivants(sommetMin);
+            //pour chaque suivant du sommetMin
+            double distance = 0;
+            for (int k=0; k<suivantsMin.size(); k++) {
+                // on calcule le cout du chemin avec le sommetMin et on le compare au chemin sauvegardé dans Valeur
+                distance = v.getValeur(sommetMin) + g.;
+                if ()
+            }
+
+        }
 
     }
 }
