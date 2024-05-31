@@ -53,9 +53,9 @@ public class Dijkstra {
             for (int k=0; k<suivantsMin.size(); k++) {
                 // on calcule le cout du chemin avec le sommetMin et on le compare au chemin sauvegardé dans Valeur
                 distance = v.getValeur(sommetMin) + suivantsMin.get(k).getCout();
-                System.out.println(distance);
                 if (distance < v.getValeur(suivantsMin.get(k).getDest())){
                     v.setValeur(suivantsMin.get(k).getDest(),distance);
+                    v.setParent(suivantsMin.get(k).getDest(),sommetMin);
                 }
             }
 

@@ -13,7 +13,9 @@ public class Main {
         Dijkstra d =new Dijkstra();
         BellemanFord b = new BellemanFord();
         Valeur v = d.resoudre(g,"A");
+        Valeur v2 = b.resoudre(g,"A");
         System.out.println(v);
+        System.out.println(v2);
 
     }
 }
