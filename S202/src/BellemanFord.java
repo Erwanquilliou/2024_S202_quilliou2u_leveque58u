@@ -2,6 +2,44 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class BellemanFord {
+    /*Entrees :
+    G un graphe oriente avec une ponderation positive des arcs (cout ou poids)
+    A un sommet (depart) de G
+
+    Debut
+    L <- {} // utilisation d’une liste de noeuds a traiter
+    Pour chaque sommet v de G faire
+        v.valeur <- Infini
+        v.parent <- Indefini
+        L <- L U {v} // ajouter le sommet v a la liste L
+    Fin Pour
+
+    A.valeur <- 0
+    pointFixe <- un booleen qui indique si le point fixe a ete trouve ou non
+
+    Tant que pointFixe = faux faire
+        changement <- un compteur pour le nombre de changements
+        Pour chaque noeud de la liste L faire
+            noeudC <- noeud // ajouter le noeud a la variable noeudC creee
+
+            Pour chaque noeud2 de la liste L faire
+                noeudSuiv <- G.suivants
+
+                Si noeud2.destination = noeudC
+                    Alors si (noeud2.cout + v.valeur(l.get(j[0]))) < v.valeur(noeudC)
+                        Alors noeudC.valeur <- noeud2.valeur + poids(noeud2,noeudC)
+                        noeudC.parent <- noeud2
+                        changement++
+                    Fin Si
+                Fin Pour
+            Fin Pour
+            Si changement = 0
+                Alors pointFixe <- vrai
+            Fin Si
+        Fin Pour
+    Fin Tant que
+    retourner v
+    Fin*/
     Valeur v = new Valeur();
     Valeur resoudre(Graphe g, String depart){
         List<String> l= g.listeNoeuds();
