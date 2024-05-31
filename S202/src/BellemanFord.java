@@ -11,7 +11,8 @@ public class BellemanFord {
         v.setValeur(depart,0);
         AtomicBoolean pointFixe = new AtomicBoolean(false);
         while (!pointFixe.get()){
-            int[] changement = {0};
+            int[] changement = {0}; // j'initialise une liste de 1 élément égal pour m'en
+            //servir en tant que compteur pour la suite, si il 
             for(int i = 0;i<l.size();i++){
                 String noeudC = l.get(i);
                 for(int[]  j = {0};j[0]<l.size();j[0]++){
