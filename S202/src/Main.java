@@ -14,6 +14,7 @@ public class Main {
         BellmanFord b = new BellmanFord();
 
         Valeur v = b.resoudre(g,"A");
+        System.out.println(v.calculerChemin("C"));
         System.out.println(v);
     }
 }
