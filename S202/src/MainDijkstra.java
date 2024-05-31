@@ -11,5 +11,6 @@ public class MainDijkstra {
         Dijkstra d =new Dijkstra();
         Valeur v = d.resoudre(g,"A");
         System.out.println(v);
+        System.out.println(v.calculerChemin("C"));
     }
 }
