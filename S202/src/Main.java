@@ -10,9 +10,10 @@ public class Main {
         g.ajouterArc("D", "B", 23);
         g.ajouterArc("B", "E", 11);
         g.ajouterArc("E", "D", 43);
-        BellemanFord b =new BellemanFord();
-        Valeur v = b.resoudre(g,"A");
+        Dijkstra d =new Dijkstra();
+        BellemanFord b = new BellemanFord();
+        Valeur v = d.resoudre(g,"A");
         System.out.println(v);
-        System.out.println(v.calculerChemin("C"));
+
     }
 }
