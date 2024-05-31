@@ -1,7 +1,7 @@
 import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-public class BellemanFordTest {
+public class BellmanFordTest {
     @Test
     public void resoudre(){
         GrapheListe g = new GrapheListe();
@@ -12,7 +12,7 @@ public class BellemanFordTest {
         g.ajouterArc("D", "B", 23);
         g.ajouterArc("B", "E", 11);
         g.ajouterArc("E", "D", 43);
-        BellemanFord b =new BellemanFord();
+        BellmanFord b =new BellmanFord();
         Valeur v = b.resoudre(g,"A");
         assertEquals(v.getValeur("E"),23);
         assertEquals(v.getValeur("A"),0);
