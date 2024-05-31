@@ -12,16 +12,21 @@ public class ComparaisonAlgorithmes {
         BellmanFord b = new BellmanFord();
         Dijkstra d = new Dijkstra();
         long date_debutB = System.nanoTime () ;
+        //on crée une variable long, qui va stocker le l'heure exact en nanoseconde, elle va représenter le début de notre chronomètre
         Valeur v = b.resoudre(g, "A");
         long date_finB = System.nanoTime () ;
+        //on crée une variable long, qui va stocker le l'heure exact en nanoseconde, elle va représenter la fin de notre chronomètre
+
 
         long date_debutD = System.nanoTime () ;
         Valeur v2 = d.resoudre(g,"A");
         long date_finD = System.nanoTime () ;
 
-        System.out.println(date_finD -date_debutD );
-        System.out.println(date_finB - date_debutB );
+        long tempsD = date_finD -date_debutD ;
+        long tempsB = date_finB - date_debutB ;
 
+        System.out.println("Algorithme de Dijkstra sur petit graphe a fini en : " + tempsD);
+        System.out.println("Algorithme de Bellman-Ford sur petit graphe a fini en : " + tempsB);
 
 
         GrapheListe g2 = new GrapheListe("Graphes/Graphe905.txt");
@@ -37,8 +42,9 @@ public class ComparaisonAlgorithmes {
         long temps1 = date_finD2 -date_debutD2 ;
         long temps2 = date_finB2 - date_debutB2 ;
 
-        System.out.println("l'algorithme de dijkstra à fini en : " + temps1);
-        System.out.println("l'algorithme de Bellmon-Ford à fini en : " + temps2);
+        System.out.println("Algorithme de dijkstra sur grand graphe a fini en : " + temps1);
+        System.out.println("Algorithme de Bellmon-Ford sur grand graphe a fini en : " + temps2);
+
 
 
     }
