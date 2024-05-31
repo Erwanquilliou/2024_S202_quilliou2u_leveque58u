@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Dijkstra {
@@ -26,14 +27,14 @@ public class Dijkstra {
     Fin Pour
     Fin Tant que
     Fin*/
-    public void resoudre(GrapheListe g, String depart) {
+    public Valeur resoudre(GrapheListe g, String depart) {
         Valeur v = new Valeur();
-        List<String> listeNoeuds = g.listeNoeuds();
+        List<String> listeNoeuds = new ArrayList<String>();
+        g.listeNoeuds().forEach(noeud -> listeNoeuds.add(noeud));
         for (int i=0; i<listeNoeuds.size(); i++) {
             v.setValeur(listeNoeuds.get(i),Double.MAX_VALUE);
         }
         v.setValeur(depart,0);
-
         while (listeNoeuds.size() > 0) {
             double min = v.getValeur(listeNoeuds.get(0));
             String sommetMin = listeNoeuds.get(0);
@@ -44,22 +45,22 @@ public class Dijkstra {
                 }
             }
             listeNoeuds.remove(sommetMin);
-
             //on regarde les suivants du sommetMin
             List<Arc> suivantsMin = g.suivants(sommetMin);
             List<String> suivantsMinNom;
-            for(int j=0; j<listeNoeuds.size(); j++){
-                if(v.getValeur(listeNoeuds.get(j) == ))
-            }
             //pour chaque suivant du sommetMin
             double distance = 0;
             for (int k=0; k<suivantsMin.size(); k++) {
                 // on calcule le cout du chemin avec le sommetMin et on le compare au chemin sauvegardé dans Valeur
                 distance = v.getValeur(sommetMin) + suivantsMin.get(k).getCout();
-                if (distance < v.getValeur(suivantsMin.get(k)));
+                if (distance < v.getValeur(suivantsMin.get(k).getDest())){
+                    v.setValeur(suivantsMin.get(k).getDest(),distance);
+                    v.setParent(suivantsMin.get(k).getDest(),sommetMin);
+                }
             }
 
         }
+        return v;
 
     }
 }
