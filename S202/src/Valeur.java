@@ -92,13 +92,12 @@ public class Valeur {
         List<String> l = new ArrayList<String>();
         String noeudCourant = destination;
         l.add(noeudCourant);
-        while(this.getParent(noeudCourant)!= null){
+        while (this.getParent(noeudCourant) != null) {
             l.add(this.getParent(noeudCourant));
             noeudCourant = this.getParent(noeudCourant);
         }
         Collections.reverse(l);
         return l;
-
     }
 
 }

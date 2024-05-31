@@ -22,6 +22,25 @@ public class ComparaisonAlgorithmes {
         System.out.println(date_finD -date_debutD );
         System.out.println(date_finB - date_debutB );
 
+
+
+        GrapheListe g2 = new GrapheListe("Graphes/Graphe905.txt");
+
+        long date_debutB2 = System.nanoTime () ;
+        Valeur v3 = b.resoudre(g2, "1");
+        long date_finB2 = System.nanoTime () ;
+
+        long date_debutD2 = System.nanoTime () ;
+        Valeur v4 = d.resoudre(g2,"1");
+        long date_finD2 = System.nanoTime () ;
+
+        long temps1 = date_finD2 -date_debutD2 ;
+        long temps2 = date_finB2 - date_debutB2 ;
+
+        System.out.println("l'algorithme de dijkstra à fini en : " + temps1);
+        System.out.println("l'algorithme de Bellmon-Ford à fini en : " + temps2);
+
+
     }
 
 }

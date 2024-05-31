@@ -1,6 +1,6 @@
 public class MainDijkstra {
     public static void main(String[] args){
-        GrapheListe g = new GrapheListe();
+        GrapheListe g = new GrapheListe("Graphes/Graphe905.txt");
         g.ajouterArc("A", "B", 12);
         g.ajouterArc("C", "A", 19);
         g.ajouterArc("A", "D", 87);

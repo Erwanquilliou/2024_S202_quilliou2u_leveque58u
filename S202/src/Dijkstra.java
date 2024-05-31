@@ -33,9 +33,12 @@ public class Dijkstra {
         g.listeNoeuds().forEach(noeud -> listeNoeuds.add(noeud));
         for (int i=0; i<listeNoeuds.size(); i++) {
             v.setValeur(listeNoeuds.get(i),Double.MAX_VALUE);
+            //on initialise la valeur de tous les sommets à Double.MAX_VALUE, correspondant à +infini
         }
         v.setValeur(depart,0);
+        //on initialise la valeur du sommet départ à 0
         while (listeNoeuds.size() > 0) {
+            //on continue tant que tous les noeuds n'ont pas été traités
             double min = v.getValeur(listeNoeuds.get(0));
             String sommetMin = listeNoeuds.get(0);
             for (int j=0; j<listeNoeuds.size(); j++) {
@@ -44,15 +47,15 @@ public class Dijkstra {
                     sommetMin = listeNoeuds.get(j);
                 }
             }
+            //on recherche le sommet avec la valeur minimal, c'est le principe de l'algorithme de dijkstra
             listeNoeuds.remove(sommetMin);
-            //on regarde les suivants du sommetMin
+            //on regarde les successeurs de sommetMin
             List<Arc> suivantsMin = g.suivants(sommetMin);
-            List<String> suivantsMinNom;
-            //pour chaque suivant du sommetMin
             double distance = 0;
             for (int k=0; k<suivantsMin.size(); k++) {
-                // on calcule le cout du chemin avec le sommetMin et on le compare au chemin sauvegardé dans Valeur
+                //pour chaque suivant du sommetMin
                 distance = v.getValeur(sommetMin) + suivantsMin.get(k).getCout();
+                // on calcule le cout du chemin avec le sommetMin et on le compare au chemin sauvegardé dans Valeur
                 if (distance < v.getValeur(suivantsMin.get(k).getDest())){
                     v.setValeur(suivantsMin.get(k).getDest(),distance);
                     v.setParent(suivantsMin.get(k).getDest(),sommetMin);
