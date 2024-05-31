@@ -15,16 +15,28 @@ public class Arc {
             this.cout = 1;
     }
 
+    /**
+     *
+     * @return chaine de caractère permettant de décrire l'objet Arc this
+     */
     public String toString(){
-        return dest + "(" + cout + ")";
+        return this.dest + "(" + this.cout + ")";
     }
 
+    /**
+     *
+     * @return la destination de l'objet Arc this
+     */
     public String getDest(){
-        return dest;
+        return this.dest;
     }
 
+    /**
+     *  getter Cout
+     * @return le cout de l'objet Arc this
+     */
     public double getCout(){
-        return cout;
+        return this.cout;
     }
 
 }

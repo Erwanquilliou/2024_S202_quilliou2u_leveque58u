@@ -12,11 +12,18 @@ public class GrapheListe implements Graphe {
     //a liste des Arcs partant de chaque noeud du graphe
     private ArrayList<Arcs> adjacence;
 
-
+    /**
+     * Constructeur par défaut
+     */
     public GrapheListe(){
         this.noeuds = new ArrayList<String>();
         this.adjacence = new ArrayList<Arcs>();
     }
+
+    /**
+     * constructeur par Fichier
+     * @param nomFich chemin d'accès vers un fichier graphe
+     */
     public GrapheListe(String nomFich){
         FileReader fich;
         this.noeuds = new ArrayList<String>();
@@ -57,11 +64,21 @@ public class GrapheListe implements Graphe {
         }
         return indiceN;
     }
+
+    /**
+     *
+     * @return la liste des noeuds du graphe
+     */
     @Override
     public List<String> listeNoeuds() {
         return this.noeuds;
     }
 
+    /**
+     *
+     * @param n noeud dont on veut connaitre les successeurs
+     * @return Les successeurs du noeud n
+     */
     @Override
     public List<Arc> suivants(String n) {
         int indice = this.getIndice(n);
